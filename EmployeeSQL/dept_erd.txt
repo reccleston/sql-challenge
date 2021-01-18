@@ -1,0 +1,37 @@
+# postres hw erd
+# https://app.quickdatabasediagrams.com/#/
+
+department as d 
+-
+dept_no FK >- dept_emp.dept_no
+dept_name
+
+dept_emp
+-
+emp_no 
+dept_no FK >- dept_manager.dep_no
+
+dept_manager
+-
+dep_no
+emp_no FK >- employees.emp_no
+
+employees
+-
+emp_no	
+emp_title_id FK >- titles.emp_title_id
+birth_date	
+first_name
+last_name
+sex	
+hire_date
+
+salaries
+-
+emp_no FK >- employees.emp_no
+salary
+
+titles
+-
+emp_title_id
+title

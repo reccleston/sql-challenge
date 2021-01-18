@@ -1,6 +1,6 @@
 create table departments (
 	dep_no int,
-	dept_name varchar(50)
+	dept_name varchar(50) not NULL
 );
 
 create table dept_emp (
@@ -15,11 +15,11 @@ create table dept_manager (
 
 create table employees (
 	emp_no int,
-	emp_title_id varchar(10),	
-	birth_date timestamp 	
-	first_name varchar(40) 	
-	last_name varchar(40)	
-	sex varchar(2)	
+	emp_title_id varchar(10) not NULL,	
+	birth_date timestamp, 	
+	first_name varchar(40) not NULL, 	
+	last_name varchar(40) not NULL,	
+	sex varchar(2) not NULL,	
 	hire_date timestamp
 );
 
@@ -29,6 +29,7 @@ create table salaries (
 );
 
 create table titles (
-	emp_title_id varchar(10),
-	title varchar(30)
+	id serial primary key, 
+	emp_title_id varchar(10) not NULL,
+	title varchar(30) not NULL
 );
