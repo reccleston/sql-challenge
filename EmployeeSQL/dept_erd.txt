@@ -1,81 +1,37 @@
-# postres hw erd
-# https://app.quickdatabasediagrams.com/#/
+## quickdb.com
 
-department
--
-dept_no varchar(10) PK FK >- dept_emp.dept_no
-dept_name varchar(30)
 
-dept_emp
--
-emp_no int PK FK >- dept_manager.emp_no
-dept_no varchar(10) FK >- dept_manager.dept_no
-
-dept_manager
+departments 
 -
 dept_no varchar(10) PK
-emp_no int FK >- employees.emp_no
+dept_name varchar(50) 
 
 employees
 -
 emp_no int PK
 emp_title_id varchar(10) FK >- titles.emp_title_id
-birth_date timestamp
+birth_date varchar(30)
 first_name varchar(40)
 last_name varchar(40)
 sex varchar(2)
-hire_date timestamp
-
-salaries
--
-emp_no int PK FK >- employees.emp_no
-salary int
+hire_date varchar(30)
 
 titles
 -
-emp_title_id PK varchar(10)
-title varchar(40)
+emp_title_id varchar(30)
+title varchar(30)
 
+dept_emp
+-
+emp_no int FK >- employees.emp_no
+dept_no varchar(10 FK >- departments.dept_no
 
-create table departments (
-	dept_no varchar(10) not NULL,
-	dept_name varchar(50) not NULL,
-	primary key (dept_no)
-);
+dept_mamager
+-
+dept_no varhcar(10) FK >- departments.dept_no
+emp_no int
 
-create table employees (
-	emp_no int not NULL,
-	emp_title_id varchar(10) not NULL,	
-	birth_date varchar(30), 	
-	first_name varchar(40) not NULL, 	
-	last_name varchar(40) not NULL,	
-	sex varchar(2) not NULL,	
-	hire_date varchar(30),
-	primary key (emp_no)
-);
-
-create table titles (
-	emp_title_id varchar(10) not NULL,
-	title varchar(30) not NULL,
-	primary key (emp_title_id)
-);
-
-create table dept_emp (
-	emp_no int not NULL,
-	dept_no varchar(10) not NULL,
-	foreign key (emp_no) references employees
-);
-
-create table dept_manager (
-	dept_no varchar(10) not NULL,
-	emp_no int not NULL,
-	foreign key (dept_no) references departments
-);
-
-
-create table salaries (
-	emp_no int not NULL,	
-	salary int not NULL,
-	primary key (emp_no)
-);
-
+salaries
+-
+emp_no int FK >- employees.emp_no
+salaries int
