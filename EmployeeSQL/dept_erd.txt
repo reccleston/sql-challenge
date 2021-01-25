@@ -34,4 +34,4 @@ emp_no int
 salaries
 -
 emp_no int FK >- employees.emp_no
-salaries int
+salary int
