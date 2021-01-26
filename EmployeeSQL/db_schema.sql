@@ -1,4 +1,7 @@
--- Department table
+-- Ryan Eccleston-Murdock
+-- sql-challenge - Schema
+-- db_schema.sql
+
 create table departments (
 	dept_no varchar(10) not NULL,
 	dept_name varchar(50) not NULL,

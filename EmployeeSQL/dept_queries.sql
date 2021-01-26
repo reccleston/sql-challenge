@@ -1,3 +1,5 @@
+-- Ryan Eccleston-Murdock
+-- sql-challenge - Queries 
 -- dept_queries.sql
 
 -- 1
@@ -10,6 +12,7 @@ select
 from employees
 left join salaries
 on salaries.emp_no = employees.emp_no;
+
 -- 2
 select 
     first_name, 
